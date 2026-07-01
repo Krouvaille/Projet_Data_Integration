@@ -16,3 +16,9 @@ dependencies = [
     "streamlit>=1.58.0",
     "ydata-profiling>=4.18.4",
 ]
+
+# Streamlit Community Cloud installs deps with Poetry. This project is an app,
+# not an installable package, so we disable Poetry's package mode; otherwise it
+# tries to build the root project and fails on the (uncommitted) README path.
+[tool.poetry]
+package-mode = false
